@@ -27,7 +27,7 @@ class CommentOnSupport
 
   def subscribers
     ids = support.comments.pluck(:user_id).uniq - [user.id] + [support.receiver_id]
-    ids -= support.receiver_id if receivers_comment?
+    ids -= support.receiver_id if receivers_comment? support, user
     User.where id: ids
   end
 
