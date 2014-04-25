@@ -14,8 +14,10 @@ describe SkipSupport do
       it 'assigns and save new user to support' do
         expect(support).to receive(:user=).with any_of(candidates)
         expect(support).to receive :save!
+        expect(subject).to receive :deliver_email
         skip!
       end
+
     end
   end
 
