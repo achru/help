@@ -22,6 +22,7 @@ gem 'draper'
 gem 'decent_exposure'
 gem 'decent_decoration'
 gem 'rollbar'
+gem 'hipchat'
 
 group :development do
   gem 'letter_opener'
