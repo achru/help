@@ -3,23 +3,32 @@ development:
     client_id: <%= ENV['GAPPS_ID'] %>
     secret: <%= ENV['GAPPS_SECRET'] %>
     domain: <%= ENV['GAPPS_DOMAIN'] %>
+  hipchat:
+    token: <%= ENV['HIPCHAT_TOKEN'] %>
+    room: <%= ENV['HIPCHAT_ROOM'] %>
   from: "test@example.com"
   cc: "default@example.com"
-  domain: localhost
+  domain: localhost:3000
 
 test:
   google_apps:
     client_id: <%= ENV['GAPPS_ID'] %>
     secret: <%= ENV['GAPPS_SECRET'] %>
     domain: <%= ENV['GAPPS_DOMAIN'] %>
+  hipchat:
+    token: <%= ENV['HIPCHAT_TOKEN'] %>
+    room: <%= ENV['HIPCHAT_ROOM'] %>
   from: "test@example.com"
-  domain: localhost
+  domain: localhost:3000
 
 production:
   google_apps:
     client_id: <%= ENV['GAPPS_ID'] %>
     secret: <%= ENV['GAPPS_SECRET'] %>
     domain: <%= ENV['GAPPS_DOMAIN'] %>
+  hipchat:
+    token: <%= ENV['HIPCHAT_TOKEN'] %>
+    room: <%= ENV['HIPCHAT_ROOM'] %>
   from: <%= ENV['POSTMARK_FROM'] %>
   cc: <%= ENV['DEFAULT_CC'] %>
   postmark:
