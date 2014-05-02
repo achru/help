@@ -11,6 +11,7 @@ class FinishSupport
     reasign_user
     finish_support
     update_counter
+    hipchat_notification
   end
 
   private
@@ -34,6 +35,10 @@ class FinishSupport
 
   def update_counter
     user.increment!(:supports_count)
+  end
+
+  def hipchat_notification
+    HipChat::FinishSupportNotification.notify!(support)
   end
 
 end
