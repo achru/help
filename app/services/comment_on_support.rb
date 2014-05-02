@@ -11,6 +11,7 @@ class CommentOnSupport
   def commence!
     new_comment.save!
     deliver_email
+    hipchat_notification
   end
 
   def new_comment
@@ -28,6 +29,10 @@ class CommentOnSupport
   def subscribers
     ids = support.comments.pluck(:user_id).uniq - [user.id] + [support.receiver_id]
     User.where id: ids
+  end
+
+  def hipchat_notification
+    HipChat::CommentOnSupportNotification.notify!(new_comment)
   end
   
 end
