@@ -34,6 +34,5 @@ module HipChat
     def base_view_path
       'hipchat_notifications/'
     end
-
   end
 end
