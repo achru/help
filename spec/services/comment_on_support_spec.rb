@@ -21,7 +21,7 @@ describe CommentOnSupport do
     end
 
     it 'sends notification on hipchat' do
-      expect(HipChat::CommentOnSupportNotification).to receive(:notify!)   
+      expect(HipChat::CommentOnSupportNotification).to receive(:notify!)
       subject.commence!
     end
   end

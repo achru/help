@@ -22,7 +22,7 @@ describe AskForSupport do
       expect(subject).to receive(:deliver_email)
       subject.commence!
     end
- 
+
     it 'sends notification on hipchat' do
       expect(HipChat::AskForSupportNotification).to receive(:notify!)
       subject.commence!
