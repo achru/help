@@ -11,7 +11,7 @@ class CommentOnSupport
   def commence!
     new_comment.save!
     deliver_email
-    hipchat_notification
+    send_hipchat_notification
   end
 
   def new_comment
@@ -31,7 +31,7 @@ class CommentOnSupport
     User.where id: ids
   end
 
-  def hipchat_notification
+  def send_hipchat_notification
     HipChat::CommentOnSupportNotification.notify!(new_comment)
   end
   

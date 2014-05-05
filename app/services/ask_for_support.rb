@@ -13,7 +13,7 @@ class AskForSupport
     setup_support
     new_support.save!
     deliver_email
-    hipchat_notification
+    send_hipchat_notification
   end
 
   def setup_support
@@ -38,7 +38,7 @@ class AskForSupport
     email.deliver
   end
 
-  def hipchat_notification
+  def send_hipchat_notification
     HipChat::AskForSupportNotification.notify! new_support
   end
 
