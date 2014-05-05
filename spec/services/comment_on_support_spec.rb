@@ -5,8 +5,8 @@ describe CommentOnSupport do
 
   describe '#commence!' do
     before do
-      allow(subject).to receive(:deliver_email) 
-      allow(subject.new_comment).to receive(:save!) 
+      allow(subject).to receive(:deliver_email)
+      allow(subject.new_comment).to receive(:save!)
       allow(HipChat::CommentOnSupportNotification).to receive(:notify!)
     end
 
