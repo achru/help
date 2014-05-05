@@ -9,7 +9,10 @@ describe FinishSupport do
 
     let(:another_user) { User.new }
 
-    before { allow(support).to receive(:save!) }
+    before do
+      allow(support).to receive(:save!)
+      allow(HipChat::FinishSupportNotification).to receive(:notify!)
+    end
 
     describe 'reassigns user support' do
       context 'to user finishing the support' do
@@ -38,6 +41,9 @@ describe FinishSupport do
       expect{ subject.commence! }.to change{ user.supports_count }.by(1)
     end
 
+    it 'sends notification on hipchat' do
+      expect(HipChat::FinishSupportNotification).to receive(:notify!)
+      subject.commence!
+    end
   end
-
 end
