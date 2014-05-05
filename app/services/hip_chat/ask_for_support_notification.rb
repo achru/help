@@ -1,2 +1,2 @@
-class HipChat:AskForSupportNotification < HipChat::Notification
+class HipChat::AskForSupportNotification < HipChat::Notification
 end
