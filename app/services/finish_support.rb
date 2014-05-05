@@ -40,5 +40,4 @@ class FinishSupport
   def send_hipchat_notification
     HipChat::FinishSupportNotification.notify!(support)
   end
-
 end

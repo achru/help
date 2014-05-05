@@ -1,6 +1,6 @@
 module HipChat
   class Notification
-    #anyway to do it better (eg. in view?)
+    # anyway to do it better (eg. in view?)
     include Rails.application.routes.url_helpers
     Rails.application.routes.default_url_options = { host: AppConfig.domain }
 
