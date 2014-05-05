@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe HipChat::Notification do
-  subject { HipChat::Notification.new(double) } 
+  subject { HipChat::Notification.new(double) }
   let(:room) { double }
 
   before do
@@ -10,10 +10,10 @@ describe HipChat::Notification do
   end
 
   describe '#notify' do
-    it "sends message to hipchat channel"  do
+    it 'sends message to hipchat channel'  do
       expect(subject.client[]).to receive(:send).
-                        with('Help App', subject.message, message_format: 'text')
-      subject.notify  
+             with('Help App', subject.message, message_format: 'text')
+      subject.notify
     end
   end
 end
