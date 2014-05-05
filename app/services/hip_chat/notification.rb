@@ -1,7 +1,8 @@
 module HipChat
   class Notification
+    #anyway to do it better (eg. in view?)
     include Rails.application.routes.url_helpers
-    Rails.application.routes.default_url_options = { host: AppConfig.domain } # anyway to do it better?
+    Rails.application.routes.default_url_options = { host: AppConfig.domain }
 
     attr_accessor :client, :model
 
@@ -13,7 +14,7 @@ module HipChat
       @client = HipChat::Client.new(AppConfig.hipchat.token)
       @model = model
     end
-     
+
     def notify
       client[AppConfig.hipchat.room].send("Help App", message.strip, message_format: 'text')
     end
