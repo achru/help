@@ -16,24 +16,15 @@ module HipChat
     end
 
     def notify
-      client[AppConfig.hipchat.room].send("Help App", message.strip, message_format: 'text')
+      client[AppConfig.hipchat.room].send("Help App", message, message_format: 'text')
     end
 
     def message
-      view = ActionView::Base.new(ActionController::Base.view_paths)
-      view.render(file: view_path, locals: { model: model, url: url}).to_s
+      "Implement me in subclass"
     end
 
     def url
       url_for(model)
-    end
-
-    def view_path
-      base_view_path + self.class.name.demodulize.underscore 
-    end
-
-    def base_view_path
-      'hipchat_notifications/'
     end
   end
 end
