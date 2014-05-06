@@ -16,7 +16,9 @@ module HipChat
     end
 
     def notify
-      client[AppConfig.hipchat.room].send("Help App", message, message_format: 'text')
+      if Rails.application.config.enable_hipchat_notifications
+        client[AppConfig.hipchat.room].send("Help App", message, message_format: 'text')
+      end
     end
 
     def message
