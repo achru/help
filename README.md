@@ -86,6 +86,15 @@ Set values like so:
 
   `heroku config:set DEFAULT_CC=default_cc_address@example.com`
 
+* HipChat notifications - if you want the application to send notifications on hipchat on support request, set up your token and you are ready to go
+
+  ```shell
+  heroku config:set HIPCHAT_TOKEN=token
+  heroku config:set HIPCHAT_ROOM=room
+  ```
+  
+  if you don't want to use hipchat notifications, you can disable it in ```config/initializers/hipchat_notifications.rb```
+
 ## Setting help subjects
 
 For now we did not yet develop any admin panel for the application. You will have to use heroku console to create your support categories. This is how we set them:
