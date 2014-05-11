@@ -11,7 +11,7 @@ module HipChat
     end
 
     def self.enabled?
-      AppConfig.hipchat? and AppConfig.hipchate.token?
+      AppConfig.hipchat? and AppConfig.hipchat.token?
     end
 
     def initialize(model)
