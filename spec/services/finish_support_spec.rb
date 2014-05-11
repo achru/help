@@ -42,7 +42,7 @@ describe FinishSupport do
     end
 
     it 'sends notification on hipchat' do
-      expect(HipChat::FinishSupportNotification).to receive(:notify!)
+      expect(subject).to receive(:send_hipchat_notification)
       subject.commence!
     end
   end
