@@ -7,7 +7,7 @@ describe CommentOnSupport do
     before do
       allow(subject).to receive(:deliver_email)
       allow(subject.new_comment).to receive(:save!)
-      allow(HipChat::CommentOnSupportNotification).to receive(:notify!)
+      allow(subject).to receive(:send_hipchat_notification)
     end
 
     it 'saves new comment' do

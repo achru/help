@@ -9,7 +9,7 @@ describe AskForSupport do
     before do
       allow(subject).to receive(:supporter).and_return(user)
       allow(subject).to receive(:deliver_email).and_return(true)
-      allow(HipChat::AskForSupportNotification).to receive(:notify!)
+      allow(subject).to receive(:send_hipchat_notification)
     end
 
     it "should save new_support" do
